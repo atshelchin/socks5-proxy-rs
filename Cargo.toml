@@ -1,0 +1,31 @@
+[package]
+name = "socks5-proxy-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive", "env"] }
+aes = "0.8"
+aes-gcm = "0.10"
+chacha20poly1305 = "0.10"
+hmac = "0.12"
+sha2 = "0.10"
+md-5 = "0.10"
+crc32fast = "1"
+base64 = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+futures-util = "0.3"
+url = "2"
+ecb = "0.1"
+cipher = "0.4"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["async_tokio"] }
+
+[[bench]]
+name = "proxy_bench"
+harness = false
